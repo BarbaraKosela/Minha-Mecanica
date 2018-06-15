@@ -56,11 +56,16 @@ namespace WFA
                 if (nomeAntigo == "")
                 {
                     carros.Add(carro);
+                    MessageBox.Show("Cadastrado com sucesso");
                     AdicionarCarroATabela(carro);
                 }
                 else
                 {
-                    carros[carros.FindIndex(x => x.Nome == nomeAntigo)] = carro;
+                    int linha = carros.FindIndex(x => x.Nome == nomeAntigo);
+                    carros[linha] = carro;
+                    EditarCarroNaTabela(carro, linha);
+                    MessageBox.Show("Alterado com sucesso");
+                    nomeAntigo = string.Empty;
                 }
                     LimparCampos();
                     tabControl1.SelectedIndex = 0;
@@ -70,6 +75,14 @@ namespace WFA
             {
                 MessageBox.Show(e1.Message);
             }
+        }
+
+        private void EditarCarroNaTabela(Carro carro, int linha)
+        {
+            dataGridView1.Rows[linha].Cells[0].Value = carro.Nome;
+            dataGridView1.Rows[linha].Cells[1].Value = carro.Marca;
+            dataGridView1.Rows[linha].Cells[2].Value = carro.Ano;
+            dataGridView1.Rows[linha].Cells[3].Value = carro.Valor;
         }
 
         private void AdicionarCarroATabela(Carro carro)
