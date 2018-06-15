@@ -1,0 +1,10 @@
+C:\Users\104962\Documents\GitHub\MinhaMecanica\MinhaMecanica\bin\Debug\MinhaMecanica.dll
+C:\Users\104962\Documents\GitHub\MinhaMecanica\MinhaMecanica\bin\Debug\MinhaMecanica.pdb
+C:\Users\104962\Documents\GitHub\MinhaMecanica\MinhaMecanica\obj\Debug\MinhaMecanica.csprojResolveAssemblyReference.cache
+C:\Users\104962\Documents\GitHub\MinhaMecanica\MinhaMecanica\obj\Debug\MinhaMecanica.dll
+C:\Users\104962\Documents\GitHub\MinhaMecanica\MinhaMecanica\obj\Debug\MinhaMecanica.pdb
+C:\Users\104962\Documents\GitHub\Minha-Mecanica\MinhaMecanica\MinhaMecanica\bin\Debug\MinhaMecanica.dll
+C:\Users\104962\Documents\GitHub\Minha-Mecanica\MinhaMecanica\MinhaMecanica\bin\Debug\MinhaMecanica.pdb
+C:\Users\104962\Documents\GitHub\Minha-Mecanica\MinhaMecanica\MinhaMecanica\obj\Debug\MinhaMecanica.csprojResolveAssemblyReference.cache
+C:\Users\104962\Documents\GitHub\Minha-Mecanica\MinhaMecanica\MinhaMecanica\obj\Debug\MinhaMecanica.dll
+C:\Users\104962\Documents\GitHub\Minha-Mecanica\MinhaMecanica\MinhaMecanica\obj\Debug\MinhaMecanica.pdb
