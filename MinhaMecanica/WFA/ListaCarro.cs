@@ -13,6 +13,8 @@ namespace WFA
 {
     public partial class ListaCarro : Form
     {
+        string nomeAntigo = "";
+        bool novo = true;
         List<Carro> carros = new List<Carro>();
         public ListaCarro()
         {
@@ -51,10 +53,17 @@ namespace WFA
                     carro.Ano = Convert.ToInt16(txtAno.Text);
                     carro.Valor = Convert.ToDecimal(txtValor.Text);
                 };
-                carros.Add(carro);
-                LimparCampos();
-                AdicionarCarroATabela(carro);
-                tabControl1.SelectedIndex = 0;
+                if (nomeAntigo == "")
+                {
+                    carros.Add(carro);
+                    AdicionarCarroATabela(carro);
+                }
+                else
+                {
+                    carros[carros.FindIndex(x => x.Nome == nomeAntigo)] = carro;
+                }
+                    LimparCampos();
+                    tabControl1.SelectedIndex = 0;
             }
 
             catch (Exception e1)
@@ -96,6 +105,37 @@ namespace WFA
             }
             
             dataGridView1.Rows.RemoveAt(linhaSelecionada);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Cadastre um carro");
+                tabControl1.SelectedIndex = 1;
+                return;
+            }
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um arquivo para apagar");
+                return;
+            }
+            int linhaSelecionada = dataGridView1.CurrentRow.Index;
+            string nome = dataGridView1.Rows[linhaSelecionada].Cells[0].Value.ToString();
+            foreach(Carro carro in carros)
+            
+            {
+                if (carro.Nome == nome)
+                {
+                    txtNome.Text = carro.Nome;
+                    txtMarca.Text = carro.Marca;
+                    txtAno.Text = Convert.ToString(carro.Ano);
+                    txtValor.Text = Convert.ToString(carro.Valor);
+                    nomeAntigo = carro.Nome;
+                    tabControl1.SelectedIndex = 1;
+                    break;
+                }
+            }
         }
     }
 }
